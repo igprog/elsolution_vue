@@ -1,0 +1,2 @@
+Sitemap: https://www.elsolution.hr/sitemap.xml
+User-agent: *

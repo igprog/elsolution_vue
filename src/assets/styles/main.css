@@ -1,0 +1,44 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@300&display=swap');
+
+#app {
+    font-family: 'Open Sans', sans-serif;
+}
+.logo {
+    height: 30px;
+}
+.btn-primary {  
+    background-color: #77dd77;
+    border: 1px solid #77dd77;
+}
+.btn-primary:hover {
+    background-color: #77dd77;
+    border: 1px solid #77dd77;
+}
+.customers-img {
+    max-height: 100px;
+    padding: 5px 0 5px 0;
+}
+.logo {
+    height:40px;
+}
+.color-main {
+    color: #77dd77;
+}
+.color-main-light {
+    color: #D2F9D2;
+}
+.color-main-dark {
+    color: #32B032;
+}
+.bg-main {
+    background-color: #77dd77;
+}
+.banner {
+    background: url("../../assets/img/banner.jpg") no-repeat center center;
+    /* background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.3)), url('../../assets/img/banner.jpg'); */
+    background-size: cover;
+}
+.footer-gradient {
+    background-image: linear-gradient(to bottom right, #c8b19f, #d2c4b9);
+}
+
