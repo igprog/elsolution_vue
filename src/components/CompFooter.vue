@@ -29,7 +29,7 @@
       <footer class="container-fluid">
         <div class="text-center">
           <span class="small"
-            >Copyright © {{ year }} El Solution | Izrada web stranice:
+            >Copyright © {{ year }} {{ constants.appName }} | Izrada web stranice:
             <a href="https://www.igprog.hr" title="Izrada web stranica i aplikacija" class="text-white font-weight-bold">IG PROG</a></span
           >
         </div>

@@ -25,7 +25,7 @@ export default {
       {
         name: "description",
         content:
-          "EL SOLUTION, OBRT ZA ELEKTROINSTALACIJSKE USLUGE posluje od 2019 godine sa sjedištem u Rijeci.",
+          "EL SOLUTION, OBRT ZA INSTALACIJSKE USLUGE posluje od 2019 godine sa sjedištem u Rijeci.",
       },
     ],
   },

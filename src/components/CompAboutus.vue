@@ -1,7 +1,7 @@
 <template>
   <div>
     <p>
-      <strong>EL SOLUTION, OBRT ZA ELEKTROINSTALACIJSKE USLUGE</strong>
+      <strong>EL. SOLUTION, OBRT ZA INSTALACIJSKE USLUGE</strong>
       posluje od 2019 godine sa sjedištem u Rijeci.<br />
       Kao primarnu djelatnost ističemo
       <strong>elektroinstalacijske radove</strong>, a u sklopu djelatnosti

@@ -1,10 +1,11 @@
 <template>
-  <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm">
+  <nav
+    class="navbar navbar-expand-lg navbar-light bg-white fixed-top shadow-sm"
+  >
     <div class="container-fluid">
       <a class="navbar-brand" href="../"
-        ><img src="../assets/logo.png" class="logo" alt="El-Solution"
-      />
-      <span class="font-weight-bold color-main">{{siteName}}</span>
+        ><img src="../assets/logo.png" class="logo" alt="El-Solution" />
+        <span class="font-weight-bold color-main">{{ constants.appName }}</span>
       </a>
       <button
         class="navbar-toggler"
@@ -55,7 +56,7 @@ export default {
         { link: "kontakt", title: "Kontakt", ico: null, isVisible: true },
         { link: "test", title: "Test", ico: null, isVisible: false },
       ],
-      siteName: 'El Solution'
+      constants: this.$constants,
     };
   },
   computed: {

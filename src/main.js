@@ -19,9 +19,9 @@ Vue.use(VueMeta)
 Vue.config.productionTip = false
 
 Vue.prototype.$constants = {
-  appName: 'El Solution',
+  appName: 'El. Solution',
   appDomain: 'elsolution.hr',
-  company: 'El Solution, obrt za instalacijske usluge',
+  company: 'El. Solution, obrt za instalacijske usluge',
   address: 'Kršinićeva 20, 51000 Rijeka, Hrvatska',
   phone: '+385 99 220 6399',
   phoneShort: '099 220 6399',

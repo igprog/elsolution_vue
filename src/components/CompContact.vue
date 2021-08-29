@@ -1,7 +1,7 @@
 <template>
   <div>
     <h2>Kontakt</h2>
-    <label>EL SOLUTION, OBRT ZA ELEKTROINSTALACIJSKE USLUGE</label>
+    <label class="text-uppercase">{{ constants.company }}</label>
     <p><icon name="home" /> {{ constants.address }}</p>
     <p><icon name="phone" /> {{ constants.phone }}</p>
     <p><icon name="envelope" /> {{ constants.email }}</p>
