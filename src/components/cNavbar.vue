@@ -44,9 +44,7 @@
 </template>
 
 <script>
-import { mixin } from "../mixins/mixin.js";
 export default {
-  mixins: [mixin],
   data() {
     return {
       menu: [

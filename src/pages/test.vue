@@ -136,22 +136,28 @@ export default {
     },
     testApiInit() {
       // Init Mail
-      const service = 'mail/init';
-      axios.get(`${process.env.ROOT_API}/${service}`).then((response) => {
-        this.d.resp = response.data;
-        console.log('d.resp', response.data);
+      // const service = 'mail/init';
+      // axios.get(`${process.env.ROOT_API}/${service}`).then((response) => {
+      //   this.d.resp = response.data;
+      //   console.log('d.resp', response.data);
+      // });
+      
+      this.get("mail/init").then((d) => {
+        debugger;
+        console.log(d);
       });
     },
     testApiPost() {
-      debugger;
+      
       this.d.resp.name = "Igor Gašparović";
       this.d.resp.email = "igprog@yahoo.com";
       this.d.resp.msg = "Ovo je test...";
 
       console.log('process.env.ROOT_API', process.env.ROOT_API);
       const service = 'mail/save';
-      this.d.loading = true;
+      // this.d.loading = true;
       axios.post(`${process.env.ROOT_API}/${service}`, this.d.resp).then((response) => {
+        debugger;
         console.log("axios post", response.data);
         this.d.loading = false;
       });

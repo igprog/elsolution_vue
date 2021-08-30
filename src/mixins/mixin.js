@@ -32,7 +32,7 @@ export const mixin = {
                 return JSON.parse(res.body.d);
             });
         },
-        post(service, params) {
+        post_old(service, params) {
             this.loading = true;
             const api = `https://localhost:5001/api/${service}`;
             // const api = 'https://localhost:5001/api/mail/send';
@@ -45,15 +45,18 @@ export const mixin = {
                 this.loading = false;
             });
         },
+        post(service, params) {
+            this.loading = true;
+            return axios.post(`${process.env.ROOT_API}/${service}`, params, { headers: { ApiKey: process.env.API_KEY } }).then((resp) => {
+                this.loading = false;
+                return resp.data;
+            });
+        },
         get(service) {
             this.loading = true;
-            const api = `https://localhost:5001/api/${service}`;
-            console.log('api', api);
-            debugger;
-            axios.get(api).then((response) => {
-                console.log('get (mixin)', response.data);
+            return axios.get(`${process.env.ROOT_API}/${service}`, { headers: { ApiKey: process.env.API_KEY } }).then((resp) => {
                 this.loading = false;
-                return response.data;
+                return resp.data;
             });
         },
         isNullOrWhiteSpace(str) {

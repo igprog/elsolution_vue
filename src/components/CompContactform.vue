@@ -6,7 +6,7 @@
         <div class="row">
           <div class="col-md-12">
             <h1 class="text-center contact-us">Pošaljite upit</h1>
-            <!-- <json :data="d" /> -->
+            <json :data="d" />
             <div v-if="alert" class="alert alert-danger mt-3">
               <h5>{{ alert }}</h5>
             </div>
@@ -60,12 +60,7 @@
           <div class="col-md-12">
             <button
               type="submit"
-              class="
-                btn btn-secondary btn-md btn-block
-                waves-effect
-                text-center
-                m-b-20
-              "
+              class="btn btn-secondary btn-md btn-block text-center m-b-20"
               @click="send(d)"
             >
               <i class="fa fa-phone"></i> Pošalji
@@ -89,7 +84,6 @@
 import json from "./json.vue";
 import compLoading from "./CompLoading.vue";
 import { mixin } from "../mixins/mixin.js";
-import axios from "axios";
 export default {
   mixins: [mixin],
   components: {
@@ -99,21 +93,13 @@ export default {
   data() {
     return {
       d: null,
-      sendTo: this.$constants.sendTo,
-      loading: false,
       alert: null,
-      apiKey: process.env.API_KEY,
     };
   },
   created() {
-    const service = "mail/init";
-    const api = `${process.env.ROOT_API}/${service}`;
-    this.loading = true;
-    debugger;
-    axios.get(api, { headers: { ApiKey: this.apiKey }}).then((response) => {
-      this.d = response.data;
-      this.d.sendTo = this.sendTo;
-      this.loading = false;
+    this.get("mail/init").then((resp) => {
+      this.d = resp;
+      this.d.sendTo = this.$constants.sendTo;
     });
   },
   computed: {
@@ -136,13 +122,8 @@ export default {
         this.alert = "Sva polja su obavezna!";
         return;
       }
-      const service = "mail/send";
-      const api = `${process.env.ROOT_API}/${service}`;
-      this.loading = true;
-      axios.post(api, d, { headers: { ApiKey: this.apiKey }}).then((response) => {
-        this.d = response.data;
-        console.log("axios post", response.data);
-        this.loading = false;
+      this.post("mail/send", d).then((resp) => {
+        this.d = resp;
       });
     },
   },

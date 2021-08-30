@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <navbar />
+    <c-navbar />
     <header class="banner">
       <div class="container text-center" style="padding: 80px 0 20px 0">
         <h1 class="font-weight-bold text-white display-1">El. Solution</h1>
@@ -14,7 +14,7 @@
 
 <script>
 require("@/assets/styles/main.css");
-import navbar from "./components/navbar.vue";
+import cNavbar from "./components/cNavbar.vue";
 import compFooter from "./components/CompFooter.vue";
 import { mixin } from "./mixins/mixin.js";
 export default {
@@ -27,7 +27,7 @@ export default {
     },
   },
   components: {
-    navbar,
+    cNavbar,
     compFooter
   },
   // data() {
