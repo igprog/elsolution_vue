@@ -1,12 +1,12 @@
 <template>
   <form>
-    <comp-loading :val="loading" title="" />
+    <c-loading :val="loading" title="" />
     <div v-if="d" class="text-center">
       <div v-if="!d.resp.isSent && !loading">
         <div class="row">
           <div class="col-md-12">
             <h1 class="text-center contact-us">Pošaljite upit</h1>
-            <json :data="d" />
+            <c-json :data="d" />
             <div v-if="alert" class="alert alert-danger mt-3">
               <h5>{{ alert }}</h5>
             </div>
@@ -81,14 +81,14 @@
 </template>
 
 <script>
-import json from "./json.vue";
-import compLoading from "./CompLoading.vue";
+import cJson from "./cJson.vue";
+import cLoading from "./cLoading.vue";
 import { mixin } from "../mixins/mixin.js";
 export default {
   mixins: [mixin],
   components: {
-    json,
-    compLoading,
+    cJson,
+    cLoading,
   },
   data() {
     return {
@@ -100,6 +100,7 @@ export default {
     this.get("mail/init").then((resp) => {
       this.d = resp;
       this.d.sendTo = this.$constants.sendTo;
+      this.d.owner = this.$constants.owner;
     });
   },
   computed: {

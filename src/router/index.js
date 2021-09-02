@@ -5,6 +5,7 @@ import aboutus from '@/pages/aboutus'
 import services from '@/pages/services'
 import test from '@/pages/test'
 import contact from '@/pages/contact'
+import reviews from '@/pages/reviews'
 
 Vue.use(Router)
 
@@ -30,6 +31,11 @@ export default new Router({
       path: '/kontakt',
       name: 'Koktakt',
       component: contact
+    },
+    {
+      path: '/recenzije',
+      name: 'Recenzije',
+      component: reviews
     },
     // {
     //   path: '/login',

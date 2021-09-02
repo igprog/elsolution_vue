@@ -4,7 +4,7 @@
     globalVariable: {{ d.gl }}
     <p>backend: {{ d.backend }}</p>
     <div>
-      <comp-control
+      <c-control
         type="button"
         @click="testMixin"
         css="warning"
@@ -12,7 +12,7 @@
       />
     </div>
     <div>
-      <comp-control
+      <c-control
         type="button"
         @click="getConfig"
         css="info"
@@ -20,16 +20,16 @@
       />
     </div>
     <div>
-      <comp-control
+      <c-control
         type="button"
         @click="postData"
         css="primary"
         title="Test Http Post"
       />
-      <comp-loading :val="loading" title="Loading Data from web service" />
+      <c-loading :val="loading" title="Loading Data from web service" />
     </div>
     <div>
-      <comp-control
+      <c-control
         type="button"
         @click="testLoading"
         css="danger"
@@ -37,7 +37,7 @@
       />
     </div>
     <div>
-      <comp-control type="button" @click="testMail" css="danger" title="Test Mail" />
+      <c-control type="button" @click="testMail" css="danger" title="Test Mail" />
     </div>
     <div>
       <control
@@ -48,7 +48,7 @@
       />
     </div>
     <div>
-      <comp-control
+      <c-control
         type="button"
         @click="testApiInit"
         css="secondary"
@@ -56,31 +56,31 @@
       />
     </div>
     <div>
-      <comp-control
+      <c-control
         type="button"
         @click="testApiPost"
         css="success"
         title="Test API Post"
       />
     </div>
-    <comp-loading :val="d.loading" title="Loading..." />
+    <c-loading :val="d.loading" title="Loading..." />
     <icon name="home" scale="5" title="Test"></icon>
-    <json :data="d" />
+    <c-json :data="d" />
   </div>
 </template>
 
 <script>
-import json from "../components/json.vue";
-import compControl from "../components/CompControl.vue";
-import compLoading from "../components/CompLoading.vue";
+import cJson from "../components/cJson.vue";
+import cControl from "../components/cControl.vue";
+import cLoading from "../components/cLoading.vue";
 import { mixin } from "../mixins/mixin.js";
 import axios from "axios";
 export default {
   mixins: [mixin],
   components: {
-    json,
-    compControl,
-    compLoading,
+    cJson,
+    cControl,
+    cLoading,
   },
   data() {
     return {

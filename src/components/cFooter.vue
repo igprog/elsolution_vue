@@ -1,11 +1,6 @@
 <template>
-  <div class="mt-3">
-    <div class="bg-secondary text-center py-3 font-weight-bold text-white lead">
-      <span>Nazovite nas</span>
-      <a :href="`tel:${constants.phone}`" class="text-white"
-        ><icon name="phone" scale="2" /> {{ constants.phoneShort }}</a
-      >
-    </div>
+  <div class="mt-5">
+    <c-call-us background="bg-secondary text-center py-3 font-weight-bold text-white lead" astyle="text-white" />
     <div class="footer-gradient">
       <div class="pt-3">
         <div class="container-fluid px-5">
@@ -18,10 +13,10 @@
               />
             </div>
             <div class="col-md-5">
-              <comp-contact />
+              <c-contact />
             </div>
             <div class="col-md-5">
-              <comp-contactform />
+              <c-contact-form />
             </div>
           </div>
         </div>
@@ -39,12 +34,14 @@
 </template>
 
 <script>
-import compContact from "./CompContact.vue";
-import compContactform from "./CompContactform.vue";
+import cContact from "./cContact.vue";
+import cContactForm from "./cContactForm.vue";
+import cCallUs from "./cCallUs.vue";
 export default {
   components: {
-    compContact,
-    compContactform,
+    cContact,
+    cContactForm,
+    cCallUs
   },
   data() {
     return {

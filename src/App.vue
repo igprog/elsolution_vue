@@ -8,14 +8,14 @@
       </div>
     </header>
     <router-view />
-    <comp-footer />
+    <c-footer />
   </div>
 </template>
 
 <script>
 require("@/assets/styles/main.css");
 import cNavbar from "./components/cNavbar.vue";
-import compFooter from "./components/CompFooter.vue";
+import cFooter from "./components/cFooter.vue";
 import { mixin } from "./mixins/mixin.js";
 export default {
   mixins: [mixin],
@@ -28,7 +28,7 @@ export default {
   },
   components: {
     cNavbar,
-    compFooter
+    cFooter
   },
   // data() {
   //   return {

@@ -3,10 +3,10 @@
     <div class="container py-3">
       <div class="row mt-5">
         <div class="col-lg-5">
-          <comp-contact />
+          <c-contact />
         </div>
         <div class="col-lg-7">
-          <comp-contactform />
+          <c-contact-form />
         </div>
       </div>
       <div style="height: 400px">
@@ -17,10 +17,9 @@
 </template>
 
 <script>
-import compContact from "../components/CompContact.vue";
-import compContactform from "../components/CompContactform.vue";
+import cContact from "../components/cContact.vue";
+import cContactForm from "../components/cContactForm.vue";
 import { mixin } from "../mixins/mixin.js";
-import axios from "axios";
 export default {
   metaInfo: {
     titleTemplate: "%s | Kontakt",
@@ -34,53 +33,8 @@ export default {
   },
   mixins: [mixin],
   components: {
-    compContact,
-    compContactform,
+    cContact,
+    cContactForm,
   },
-  // data() {
-  //   return {
-  //     d: null,
-  //     loading: false,
-  //     alert: null,
-  //   };
-  // },
-  // created() {
-  //   const service = "mail/init";
-  //   const api = `${process.env.ROOT_API}/${service}`;
-  //   this.loading = true;
-  //   axios.get(api).then((response) => {
-  //     this.d = response.data;
-  //     this.loading = false;
-  //   });
-  // },
-  // mounted() {},
-  // computed: {
-  //   classAlert: function () {
-  //     return {
-  //       "text-success": this.d.resp.isSent,
-  //       "text-danger": !this.d.resp.isSent,
-  //     };
-  //   },
-  // },
-  // methods: {
-  //   send(d) {
-  //     this.alert = null;
-  //     if (
-  //       this.isNullOrWhitespace(d.name) ||
-  //       this.isNullOrWhitespace(d.email) ||
-  //       this.isNullOrWhitespace(d.msg)
-  //     ) {
-  //       this.alert = "Sva polja su obavezna!";
-  //     }
-  //     const service = "mail/send";
-  //     const api = `${process.env.ROOT_API}/${service}`;
-  //     this.loading = true;
-  //     axios.post(api, d).then((response) => {
-  //       this.d = response.data;
-  //       console.log("axios post", response.data);
-  //       this.loading = false;
-  //     });
-  //   },
-  // },
 };
 </script>

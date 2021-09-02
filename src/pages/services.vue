@@ -1,18 +1,18 @@
 <template>
   <div class="container text-center pt-3">
     <h2>Usluge</h2>
-    <div class="text-justify">
-      <card
+    <div class="text-justify pt-3">
+      <c-card
         img="air-conditioner.jpg"
         title="Usluge montaže klime"
         desc="Obavljamo usluge montaže klima uređaja i servisa sa mogučnošću nabave brenda po želji kupca."
       />
-      <card
+      <c-card
         img="electrician.jpg"
         title="Elektro instalacije"
         desc="Izvodimo elektro instalacije u građevini i zgradarstvu, sa vrhunskim materijalima i uslugom, koju obavljamo stručno i kvalitetno."
       />
-      <card
+      <c-card
         img="instalation.jpg"
         title="Instalacija kabela"
         desc="Instalacija kabela i opreme u industrijskoj mehanizaciji i robotici."
@@ -22,7 +22,7 @@
 </template>
 
 <script>
-import card from "../components/card.vue";
+import cCard from "../components/cCard.vue";
 export default {
   metaInfo: {
     titleTemplate: "%s | Usluge",
@@ -34,7 +34,9 @@ export default {
       },
     ],
   },
-  components: { card },
+  components: {
+    cCard,
+  },
   data() {
     return {
       d: null,

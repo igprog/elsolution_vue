@@ -2,7 +2,7 @@ import axios from 'axios';
 export const mixin = {
     data() {
         return {
-            appname: 'Plan Ishrane - Aplikacija',
+            appname: 'Test',
             apiurl: '',
             loading: false
         };

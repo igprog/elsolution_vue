@@ -51,6 +51,7 @@ export default {
         { link: "", title: "Naslovna", ico: null, isVisible: true },
         { link: "o-nama", title: "O nama", ico: null, isVisible: true },
         { link: "usluge", title: "Usluge", ico: null, isVisible: true },
+        { link: "recenzije", title: "Recenzije", ico: null, isVisible: true },
         { link: "kontakt", title: "Kontakt", ico: null, isVisible: true },
         { link: "test", title: "Test", ico: null, isVisible: false },
       ],

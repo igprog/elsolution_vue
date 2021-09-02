@@ -19,18 +19,17 @@ Vue.use(VueMeta)
 Vue.config.productionTip = false
 
 Vue.prototype.$constants = {
+  owner: 'elsolution',
   appName: 'El. Solution',
   appDomain: 'elsolution.hr',
   company: 'El. Solution, obrt za instalacijske usluge',
   address: 'Kršinićeva 20, 51000 Rijeka, Hrvatska',
   phone: '+385 99 220 6399',
   phoneShort: '099 220 6399',
-  email: 'markosupica@gmail.com',
+  email: 'info@elsolution.hr',
   pin: '07474673441',
-  sendTo: 'igprog@yahoo.com'
+  sendTo: 'info@elsolution.hr'
 }
-
-// Vue.prototype.$apiurl = 'https://localhost:5001/api';
 
 Vue.prototype.$isLogin = false;
 

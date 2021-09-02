@@ -1,20 +1,28 @@
 <template>
   <div>
     <div class="container pt-5 text-justify">
+      <div class="pb-5 text-center font-weight-bold">
+        <h2 class="text-uppercase display-4 font-weight-bold">
+          Tražite električara?
+        </h2>
+        <c-call-us
+          background="text-center py-3 font-weight-bold lead shadow bg-main" astyle="text-dark"
+        />
+      </div>
       <h2>O nama</h2>
-      <comp-aboutus />
+      <c-about-us />
       <h2>Usluge</h2>
-      <card
+      <c-card
         img="air-conditioner.jpg"
         title="Usluge montaže klime"
         desc="Obavljamo usluge montaže klima uređaja i servisa sa mogučnošću nabave brenda po želji kupca."
       />
-      <card
+      <c-card
         img="electrician.jpg"
         title="Elektro instalacije"
         desc="Izvodimo elektro instalacije u građevini i zgradarstvu, sa vrhunskim materijalima i uslugom, koju obavljamo stručno i kvalitetno."
       />
-      <card
+      <c-card
         img="instalation.jpg"
         title="Instalacija kabela"
         desc="Instalacija kabela i opreme u industrijskoj mehanizaciji i robotici."
@@ -29,8 +37,9 @@
 </template>
 
 <script>
-import compAboutus from "../components/CompAboutus.vue";
-import card from "../components/card.vue";
+import cAboutUs from "../components/cAboutUs.vue";
+import cCard from "../components/cCard.vue";
+import cCallUs from "../components/cCallUs.vue";
 export default {
   metaInfo: {
     titleTemplate: "%s | Naslovna",
@@ -42,8 +51,14 @@ export default {
     ],
   },
   components: {
-    compAboutus,
-    card,
+    cAboutUs,
+    cCard,
+    cCallUs,
+  },
+  data() {
+    return {
+      constants: this.$constants,
+    };
   },
 };
 </script>
