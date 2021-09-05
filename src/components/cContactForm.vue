@@ -1,5 +1,5 @@
 <template>
-  <form>
+  <div>
     <c-loading :val="loading" title="" />
     <div v-if="d" class="text-center">
       <div v-if="!d.resp.isSent && !loading">
@@ -20,7 +20,6 @@
                 type="text"
                 class="form-control text-left"
                 placeholder="Ime"
-                required=""
               />
             </div>
           </div>
@@ -31,7 +30,6 @@
                 type="email"
                 class="form-control text-left"
                 placeholder="Email"
-                required=""
               />
             </div>
           </div>
@@ -42,7 +40,6 @@
                 type="text"
                 class="form-control text-left"
                 placeholder="Telefon"
-                required=""
               />
             </div>
           </div>
@@ -52,14 +49,12 @@
             v-model="d.msg"
             class="form-control text-left"
             placeholder="Poruka"
-            required=""
           >
           </textarea>
         </div>
         <div class="row">
           <div class="col-md-12">
             <button
-              type="submit"
               class="btn btn-secondary btn-md btn-block text-center m-b-20"
               @click="send(d)"
             >
@@ -77,7 +72,7 @@
         </div>
       </div>
     </div>
-  </form>
+  </div>
 </template>
 
 <script>
@@ -114,13 +109,16 @@ export default {
   methods: {
     send(d) {
       this.alert = null;
-      if (
-        this.isNullOrWhiteSpace(d.name) ||
-        this.isNullOrWhiteSpace(d.email) ||
-        this.isNullOrWhiteSpace(d.phone) ||
-        this.isNullOrWhiteSpace(d.msg)
-      ) {
-        this.alert = "Sva polja su obavezna!";
+      if (this.isNullOrWhiteSpace(d.name)) {
+        this.alert = "Ime je obavezno!";
+        return;
+      }
+      if (this.isNullOrWhiteSpace(d.email) && this.isNullOrWhiteSpace(d.phone)) {
+        this.alert = "Email ili Telefon su obavezni!";
+        return;
+      }
+      if (this.isNullOrWhiteSpace(d.msg)) {
+        this.alert = "Poruka je obavezna!";
         return;
       }
       this.post("mail/send", d).then((resp) => {
