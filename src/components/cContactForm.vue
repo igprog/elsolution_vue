@@ -2,7 +2,7 @@
   <div>
     <c-loading :val="loading" title="" />
     <div v-if="d" class="text-center">
-      <div v-if="!d.resp.isSent && !loading">
+      <div v-if="!loading">
         <div class="row">
           <div class="col-md-12">
             <h1 class="text-center contact-us">Pošaljite upit</h1>
@@ -64,10 +64,10 @@
         </div>
       </div>
       <div class="container py-5 px-2">
-        <div v-if="d.resp.msg" class="card">
+        <div v-if="resp" class="card">
           <div :class="classAlert" class="pt-3">
-            <h3 v-if="d.resp.msg">{{ d.resp.msg }}</h3>
-            <p v-if="d.resp.msg1">{{ d.resp.msg1 }}</p>
+            <h3 v-if="resp.msg">{{ resp.msg }}</h3>
+            <p v-if="resp.msg1">{{ resp.msg1 }}</p>
           </div>
         </div>
       </div>
@@ -89,6 +89,7 @@ export default {
     return {
       d: null,
       alert: null,
+      resp: null
     };
   },
   created() {
@@ -101,8 +102,8 @@ export default {
   computed: {
     classAlert: function () {
       return {
-        "text-success": this.d.resp.isSent,
-        "text-danger": !this.d.resp.isSent,
+        "text-success": this.resp.isSuccess,
+        "text-danger": !this.resp.isSuccess,
       };
     },
   },
@@ -122,7 +123,7 @@ export default {
         return;
       }
       this.post("mail/send", d).then((resp) => {
-        this.d = resp;
+        this.resp = resp;
       });
     },
   },
